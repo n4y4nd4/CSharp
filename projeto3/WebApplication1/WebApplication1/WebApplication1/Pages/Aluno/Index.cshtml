@@ -1,0 +1,65 @@
+﻿@page
+@model WebApplication1.Pages.Aluno.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table" enctype="multipart/form-data">
+    <thead>
+        <tr>
+            <th>
+                <p>imagem</p>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alunos[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alunos[0].Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alunos[0].CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alunos[0].Matricula)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Alunos)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/menu/@item.ImageFile" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matricula)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section RightFooter
+{
+    <img src="~/images/menu/cake-brown.png" />
+}

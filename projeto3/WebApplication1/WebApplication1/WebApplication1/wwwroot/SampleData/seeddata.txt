@@ -1,0 +1,22 @@
+﻿modelBuilder.Entity<Aluno>().HasData(
+    new Aluno()
+    {
+        Id = 1,
+        Nome = "Lucas",
+        Endereco = "For indecisive food afficianados.",
+        CPF = "12345678"
+        Matricula = "123",
+        ImageFileName = "charcuterie.png",
+        
+    },
+    new Aluno()
+    {
+        Id = 2,
+        Nome = "Lucas",
+        Endereco = "For indecisive food afficianados.",
+        CPF = "12345678"
+        Matricula = "123",
+       ImageFileName = "waffles.png",
+        
+    }
+    ); 

@@ -1,0 +1,59 @@
+﻿@page
+@model WebApplication1.Pages.Aluno.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Alunos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Alunos.Id" />
+            <div class="form-group">
+                <label asp-for="Alunos.Nome" class="control-label"></label>
+                <input asp-for="Alunos.Nome" class="form-control" />
+                <span asp-validation-for="Alunos.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alunos.Endereco" class="control-label"></label>
+                <input asp-for="Alunos.Endereco" class="form-control" />
+                <span asp-validation-for="Alunos.Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alunos.CPF" class="control-label"></label>
+                <input asp-for="Alunos.CPF" class="form-control" />
+                <span asp-validation-for="Alunos.CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alunos.Matricula" class="control-label"></label>
+                <input asp-for="Alunos.Matricula" class="form-control" />
+                <span asp-validation-for="Alunos.Matricula" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Alunos.Upload">Image</label>
+                <input asp-for="Alunos.Upload" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section RightFooter
+{
+    <img src="~/images/menu/cookies.png" />
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
